@@ -1,0 +1,12 @@
+{
+  "name": "quiz-static",
+  "version": "1.0.0",
+  "description": "A basic quiz static web application",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Sylvain Pollet-Villard",
+  "license": "WTFPL",
+  "devDependencies": {
+    "snowpack": "^1.0.5"
+  }
+}
