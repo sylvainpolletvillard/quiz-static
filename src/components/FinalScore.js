@@ -51,7 +51,7 @@ export default {
 					title: `On track.`,
 					description: "Good try, but you still have things to learn."
 				}
-			if (this.percentage >= 50)
+			if (this.percentage >= 40)
 				return {
 					title: `Not good enough.`,
 					description:
@@ -65,7 +65,7 @@ export default {
 				}
 			return {
 				title: `Come on....`,
-				description: "You did on purpose, right ?"
+				description: "You did it on purpose, right ?"
 			}
 		}
 	},

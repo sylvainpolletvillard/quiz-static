@@ -81,6 +81,13 @@ label {
 	margin: 0 auto;
 }
 
+p.error {
+	background-color: var(--color-wrong);
+	padding: 1em;
+	border-radius: 1em;
+	box-shadow: 0 5px 10px var(--color-shadow);
+}
+
 input:checked + label:not(.right):not(.wrong) {
 	color: var(--color-primary);
 }

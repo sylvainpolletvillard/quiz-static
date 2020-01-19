@@ -18,8 +18,8 @@ export default {
         Loading quiz...
     </p>
     <p class="error" v-else-if="error">
-        There is no quiz of that name: {{quizName}}
-    </p>
+		Error loading quiz <b>{{quizName}}</b>: <br/>{{error.message}}
+	</p>
 
     <Quiz v-else :quiz="quiz" />`,
 
@@ -46,6 +46,7 @@ export default {
 				.catch(error => {
 					console.error(error)
 					this.error = error
+					this.loading = false
 				})
 		}
 	}
