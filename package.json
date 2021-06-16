@@ -1,17 +1,14 @@
 {
-	"name": "quiz-static",
-	"version": "1.0.0",
-	"description": "A basic quiz static web application",
-	"main": "index.js",
-	"scripts": {
-		"prepare": "snowpack"
-	},
-	"author": "Sylvain Pollet-Villard",
-	"license": "WTFPL",
-	"devDependencies": {
-		"snowpack": "^1.0.5"
-	},
-	"dependencies": {
-		"objectmodel": "^4.0.5"
-	}
+  "name": "quiz-static",
+  "version": "1.0.0",
+  "description": "A basic quiz static web application",
+  "main": "index.js",
+  "scripts": {
+    "index-quiz": "node build/update-index-quiz.js"
+  },
+  "author": "Sylvain Pollet-Villard",
+  "license": "WTFPL",
+  "dependencies": {
+    "objectmodel": "^4.0.5"
+  }
 }

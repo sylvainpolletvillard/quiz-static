@@ -1,0 +1,133 @@
+{
+  "title": "Progressive Web Apps",
+  "description": "Prêts à tester vos connaissances ?",
+  "questions": [
+    {
+      "question": "Que sont les PWA ?",
+      "choices": [
+        "Un nouveau terme marketing à la mode",
+        "Une nouvelle API standard du Web",
+        "Une nouvelle plate-forme pour les web-apps",
+        "Un nouveau framework par Google"
+      ],
+      "answer": 1,
+      "explaination": "Les Progressive Web Apps (PWA) ne font pas référence à une API, un framework ou une plate-forme spécifique. Vous pouvez considérer les PWA comme un label qualité, ou un terme marketing utilisé pour vendre aux développeurs et aux clients les fonctionnalités modernes offertes par la plate-forme Web. Le terme PWA permet de communiquer de façon plus efficace sur un certain niveau de qualité attendu pour une web app, plutôt que de faire une longue liste de fonctionnalités et de détails techniques obscurs."
+    },
+
+    {
+      "question": "Quels sont les avantages d'une PWA ?",
+      "choices": [
+        "Améliorations de performance",
+        "Meilleure intégration avec la plate-forme système",
+        "Economies de batterie",
+        "Améliorations en accessibilité"
+      ],
+      "answer": [1, 2, 3],
+      "explaination": "Les PWA encouragent des stratégies de cache agressives qui mènent à des réductions drastiques de la quantité de requêtes réseau effectuées. Cela amène une meilleur performance ressentie ainsi que des économies de batterie significatives, puisque les requêtes réseau sont souvent l'action la plus énergivore sur mobile. Les PWA s'intègrent également mieux avec la plate-forme système: elles peuvent être installées et gérées comme des applications natives. Cependant, faire une PWA n'améliore pas par magie l'accessibilité de votre web app, ceci est toujours votre responsabilité."
+    },
+
+    {
+      "question": "Le \"P\" de PWA fait référence à l'amélioration Progressive. Quel est le principal objectif de cette méthodologie ?",
+      "choices": [
+        "Préserver le support des vieux navigateurs",
+        "Exploiter au mieux les capacités et propriétés spécifiques de chaque appareil (taille d'écran, tactile, géolocalisation...)",
+        "Aider le développeur à migrer graduellement d'un site web classique à une PWA",
+        "Télécharger graduellement le contenu de la web app afin d'économiser en bande passante et consommation data"
+      ],
+      "answer": 1,
+      "explaination": "L'objectif de l'amélioration progressive est de rendre le contenu et les services accessibles à la plus grande audience possible, en utilisant la détection de fonctionnalités, les polyfills, ou des API conçues pour ne pas impacter négativement les navigateurs qui ne les supportent pas. Les autres propositions font référence à l'Adaptive Design, le Lazy Loading et la Migration Itérative."
+    },
+
+    {
+      "question": "Si un service suit l'approche Optimistic UI (ou compensation de latence), combien de réponses va-t-il retourner pour une requête ?",
+      "choices": ["Une", "Deux", "Trois"],
+      "answer": 2,
+      "explaination": "Un appel service dit optimiste va présumer que la requête sera un succès dans la majorité des cas, et retourner immédiatement une réponse Success, possiblement avec des données incomplètes. Puis, quand la réponse réseau est reçue, le service renvoie la seconde réponse à la vue pour compléter ces données ou gérer les erreurs survenues."
+    },
+
+    {
+      "question": "Comment relier un manifeste web à une web app ?",
+      "choices": [
+        "avec un tag <link>",
+        "avec un tag <meta>",
+        "en suivant la convention de nommage \"manifest.json\""
+      ],
+      "answer": 1,
+      "explaination": "Le fichier manifeste doit être référencé dans le document HTML par une balise link dans la section <head>."
+    },
+
+    {
+      "question": "Laquelle de ces propositionns n'est pas une valeur valide pour la propriété \"display\" dans un manifeste de web app ?",
+      "choices": [
+        "fullscreen",
+        "standalone",
+        "minimal-ui",
+        "browser",
+        "native"
+      ],
+      "answer": 5
+    },
+
+    {
+      "question": "Quelle est la spécificité des Web Workers ?",
+      "choices": [
+        "ils s'éxécutent dans un thread séparé",
+        "ils peuvent utiliser plus de puissance CPU",
+        "ils ont un accès en lecture seule au document",
+        "ils ont accès à plus d'API que les scripts classiques"
+      ],
+      "answer": 1,
+      "explaination": "Les Web Workers s'exécutent dans leur propre thread séparé du thread principal, ce qui est super pour faire des calculs coûteux sans interférer avec le thread principal. Cela signifie aussi qu'ils n'ont pas accès au document ou aux API reliées au document. La quantité de ressources CPU qui lui sont allouées dépend du navigateur et du système d'exploitation."
+    },
+
+    {
+      "question": "Quelles sont les fonctionnalités offertes par les Service Workers ?",
+      "choices": [
+        "Utilisation de l'application en mode hors-ligne",
+        "Notifications Push",
+        "Synchronisation en arrière-plan",
+        "Boîte de dialogue invitant à l'installation de la PWA"
+      ],
+      "answer": [1, 2, 3],
+      "explaination": "Le prompt d'installation est géré par le navigateur, mais cette fonctionnalité n'est pas liée directement aux Service Workers. Cependant, l'inscription d'un Service Worker est très souvent un des critères requis pour permettre à une web app d'être installable."
+    },
+
+    {
+      "question": "Laquelle de ces API ne peut pas être utilisée pour stocker des fichiers ou des données ?",
+      "choices": ["Cache API", "localStorage", "IndexedDB", "Fetch API"],
+      "answer": 4,
+      "explaination": "La Cache API peut être utilisée pour stocker des réponses réseau et des fichiers. Le localStorage est un simple stockage côté client de paires clé-valeur de données, tandis que IndexedDB est une API servant à manipuler une base de données relationnelle côté client. Fetch est l'API utilisée pour faire des requêtes HTTP en JavaScript."
+    },
+
+    {
+      "question": "Quel est le nom de la stratégie de cache qui, similairement à l'Optimistic UI, peut retourner deux réponses pour une seule requête ?",
+      "choices": [
+        "Cache First",
+        "Cache Update Refresh",
+        "Precaching",
+        "Cache Only"
+      ],
+      "answer": 2,
+      "explaination": "Avec la stratégie Cache Update Refresh, une réponse en cache sera retournée immédiatement et l'appel réseau sera fait en parallèle, puis la réponse réseau sera à son tour retournée à la vue pour l'actualiser avec des données fraîches."
+    },
+
+    {
+      "question": "Quel est le nom de l'outil le plus populaire pour auditer les PWA ?",
+      "choices": ["Lighthouse", "Preact", "Webpack", "Workbox"],
+      "answer": 1,
+      "explaination": "Lighthouse est l'outil d'audit/débogage inclus dans les outils développeur de Chrome. Preact est un framework JavaScript, Webpack est un bundler et Workbox est une bibliothèque de fonctions utilitaires utilisées dans le développement de Service Workers."
+    },
+
+    {
+      "question": "Comment les frameworks JS peuvent vous aider à concevoir des PWA ?",
+      "choices": [
+        "Ils utilisent leur process de build pour trouver et mettre en cache client tous les fichiers statiques requis par votre application",
+        "Ils choisissent automatiquement la stratégie de cache la plus appropriée en fonction de la requête",
+        "Ils aident à compléter le manifeste d'application pour vous, et le relier à votre application",
+        "Ils fournissent out of the box une approche Optimistic UI pour les requêtes réseau"
+      ],
+      "answer": [1, 3],
+      "explaination": "Le plupart des frameworks populaires avec des options pour PWA vous aident en créant et en reliant le manifeste d'application pour vous, puis en inscrivant un Service Worker chargé de faire du pre-caching basique de vos fichiers statiques et les servir quand l'utilisateur est offline. Cependant, c'est toujours aux développeurs de définir et d'appliquer les stratégies de cache avancées telles que la compensation de latence ou la gestion d'erreurs. Ces mécaniques sont trop variées et complexes pour être adressées au niveau du framework, en revanche ils peuvent proposer des bibliothèques utilitaires telles que Workbox qui peuvent vous faciliter la tâche de développement."
+    }
+  ]
+}

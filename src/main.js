@@ -1,3 +1,3 @@
 import App from "./components/App.js";
 
-Vue.createApp().mount(App, "#app");
+Vue.createApp(App).mount("#app");

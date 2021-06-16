@@ -1,18 +1,23 @@
+import CreateQuiz from "./CreateQuiz.js"
 import OpenQuiz from "./OpenQuiz.js"
 import QuizComponent from "./Quiz.js"
 import { Quiz } from "../model.js"
 
 export default {
 	name: "App",
-	data: {
-		quiz: null,
-		quizName: new URL(window.location).searchParams.get("quiz"),
-		loading: true,
-		error: null
+	data(){
+		return {
+			quiz: null,
+			quizName: new URL(window.location).searchParams.get("quiz"),
+			action: new URL(window.location).searchParams.get("action"),
+			loading: true,
+			error: null
+		}
 	},
 	template: `
     <h1>Quiz time !</h1>
-    <OpenQuiz v-if="!quizName" />
+	<OpenQuiz v-if="!quizName && !action" />
+	<CreateQuiz v-else-if="action === 'edit'" />
 
     <p class="loading" v-else-if="loading">
         Loading quiz...
@@ -24,6 +29,7 @@ export default {
     <Quiz v-else :quiz="quiz" />`,
 
 	components: {
+		CreateQuiz,
 		OpenQuiz,
 		Quiz: QuizComponent
 	},
@@ -37,9 +43,10 @@ export default {
 	methods: {
 		loadQuiz() {
 			this.loading = true
-			import(`../../quiz/${this.quizName}.js`)
-				.then(module => {
-					this.quiz = Quiz(module.default)
+			fetch(`../../quiz/${this.quizName}.json`)
+				.then(res => res.json())
+				.then(quizData => {
+					this.quiz = Quiz(quizData)
 					this.loading = false
 					document.title = `Quiz: ${this.quiz.title}`
 				})
