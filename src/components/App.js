@@ -43,7 +43,7 @@ export default {
 	methods: {
 		loadQuiz() {
 			this.loading = true
-			fetch(`../../quiz/${this.quizName}.json`)
+			fetch(`./quiz/${this.quizName}.json`)
 				.then(res => res.json())
 				.then(quizData => {
 					this.quiz = Quiz(quizData)
