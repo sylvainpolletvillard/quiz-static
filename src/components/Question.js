@@ -9,30 +9,30 @@ export default {
 			<b>{{question.question}}</b>
 		</p>
 		<i v-if="canHaveMultipleAnswers">(several answers possible)</i>
-        <ul class="choices">
-            <li v-for="(choice, i) in choices">
+        <ul class="propositions">
+            <li v-for="(prop, i) in propositions">
 				<input
 					v-if="canHaveMultipleAnswers"
 					type="checkbox"
-					:id="'choice'+choice.num"
-					:value="choice.num"
+					:id="'prop'+prop.num"
+					:value="prop.num"
 					:disabled="answered"
-					v-model="chosen"
+					v-model="choices"
 				/>
 
 				<input
 					v-else
 					type="radio"
-					:id="'choice'+choice.num"
-					:value="choice.num"
+					:id="'prop'+prop.num"
+					:value="prop.num"
 					:disabled="answered"
-					v-model="chosen"
+					v-model="choice"
 				>
 				<label
-					:for="'choice'+choice.num"
-					:class="getLabelColor(choice.num)"
+					:for="'prop'+prop.num"
+					:class="getLabelColor(prop.num)"
 				>
-					{{choice}}
+					{{prop.toString()}}
 				</label>
             </li>
 		</ul>
@@ -60,7 +60,8 @@ export default {
 
 	data() {
 		return {
-			chosen: this.canHaveMultipleAnswers ? [] : null,
+			choices: [],
+			choice: null,
 			answered: false
 		}
 	},
@@ -68,7 +69,8 @@ export default {
 	watch: {
 		number(num, previous) {
 			if (num !== previous) {
-				this.chosen = this.canHaveMultipleAnswers ? [] : null
+				this.choice = null;
+				this.choices = [];
 				this.answered = false
 			}
 		}
@@ -79,14 +81,14 @@ export default {
 			return Array.isArray(this.question.answer)
 		},
 		hasChosen() {
-			return this.chosen && this.canHaveMultipleAnswers
-				? this.chosen.length > 0
-				: this.chosen != null
+			return this.canHaveMultipleAnswers
+				? this.choices.length > 0
+				: this.choice != null
 		},
-		choices() {
+		propositions() {
 			return shuffle(
-				this.question.choices.map((choice, i) =>
-					Object.assign(choice, { num: i + 1 })
+				this.question.propositions.map((prop, i) =>
+					Object.assign(prop, { num: i + 1 })
 				)
 			)
 		}
@@ -96,27 +98,25 @@ export default {
 		submitAnswer() {
 			this.answered = true
 			if (this.canHaveMultipleAnswers) {
-				this.isCorrect = arrayEquals(this.chosen, this.question.answer)
+				this.isCorrect = arrayEquals(this.choices, this.question.answer)
 			} else {
-				this.isCorrect = this.chosen === this.question.answer
+				this.isCorrect = this.choice === this.question.answer
 			}
 
 			this.$emit(this.isCorrect ? "right" : "wrong")
 		},
 		getLabelColor(n) {
 			if (!this.answered) return null
-
-			let chosen = this.chosen,
-				answer = this.question.answer
+			const answer = this.question.answer
 
 			if (this.canHaveMultipleAnswers) {
-				if (answer.includes(n) && chosen.includes(n)) return "right"
-				if (answer.includes(n) && !chosen.includes(n)) return "right"
-				if (!answer.includes(n) && chosen.includes(n)) return "wrong"
+				if (answer.includes(n) && this.choices.includes(n)) return "right"
+				if (answer.includes(n) && !this.choices.includes(n)) return "right"
+				if (!answer.includes(n) && this.choices.includes(n)) return "wrong"
 			} else {
-				if (answer === n && chosen === n) return "right"
-				if (answer === n && chosen !== n) return "right"
-				if (answer !== n && chosen === n) return "wrong"
+				if (answer === n && this.choice === n) return "right"
+				if (answer === n && this.choice !== n) return "right"
+				if (answer !== n && this.choice === n) return "wrong"
 			}
 		}
 	}

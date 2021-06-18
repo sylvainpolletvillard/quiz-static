@@ -96,7 +96,7 @@ ul {
 }
 
 label {
-  cursor: pointer;
+  cursor: pointer;  
 }
 
 #app {
@@ -109,6 +109,10 @@ p.error {
   padding: 1em;
   border-radius: 1em;
   box-shadow: 0 5px 10px var(--color-shadow);
+}
+
+input[type="checkbox"], input[type="radio"] {
+  margin-right: 0.5em;
 }
 
 input:checked + label:not(.right):not(.wrong) {

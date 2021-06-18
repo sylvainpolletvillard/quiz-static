@@ -47,6 +47,7 @@ export default {
 				.then(res => res.json())
 				.then(quizData => {
 					this.quiz = Quiz(quizData)
+					window.quiz = this.quiz;
 					this.loading = false
 					document.title = `Quiz: ${this.quiz.title}`
 				})

@@ -4,7 +4,7 @@
   "questions": [
     {
       "question": "Que sont les PWA ?",
-      "choices": [
+      "propositions": [
         "Un nouveau terme marketing à la mode",
         "Une nouvelle API standard du Web",
         "Une nouvelle plate-forme pour les web-apps",
@@ -16,7 +16,7 @@
 
     {
       "question": "Quels sont les avantages d'une PWA ?",
-      "choices": [
+      "propositions": [
         "Améliorations de performance",
         "Meilleure intégration avec la plate-forme système",
         "Economies de batterie",
@@ -28,7 +28,7 @@
 
     {
       "question": "Le \"P\" de PWA fait référence à l'amélioration Progressive. Quel est le principal objectif de cette méthodologie ?",
-      "choices": [
+      "propositions": [
         "Préserver le support des vieux navigateurs",
         "Exploiter au mieux les capacités et propriétés spécifiques de chaque appareil (taille d'écran, tactile, géolocalisation...)",
         "Aider le développeur à migrer graduellement d'un site web classique à une PWA",
@@ -40,14 +40,14 @@
 
     {
       "question": "Si un service suit l'approche Optimistic UI (ou compensation de latence), combien de réponses va-t-il retourner pour une requête ?",
-      "choices": ["Une", "Deux", "Trois"],
+      "propositions": ["Une", "Deux", "Trois"],
       "answer": 2,
       "explaination": "Un appel service dit optimiste va présumer que la requête sera un succès dans la majorité des cas, et retourner immédiatement une réponse Success, possiblement avec des données incomplètes. Puis, quand la réponse réseau est reçue, le service renvoie la seconde réponse à la vue pour compléter ces données ou gérer les erreurs survenues."
     },
 
     {
       "question": "Comment relier un manifeste web à une web app ?",
-      "choices": [
+      "propositions": [
         "avec un tag <link>",
         "avec un tag <meta>",
         "en suivant la convention de nommage \"manifest.json\""
@@ -58,7 +58,7 @@
 
     {
       "question": "Laquelle de ces propositionns n'est pas une valeur valide pour la propriété \"display\" dans un manifeste de web app ?",
-      "choices": [
+      "propositions": [
         "fullscreen",
         "standalone",
         "minimal-ui",
@@ -70,7 +70,7 @@
 
     {
       "question": "Quelle est la spécificité des Web Workers ?",
-      "choices": [
+      "propositions": [
         "ils s'éxécutent dans un thread séparé",
         "ils peuvent utiliser plus de puissance CPU",
         "ils ont un accès en lecture seule au document",
@@ -82,7 +82,7 @@
 
     {
       "question": "Quelles sont les fonctionnalités offertes par les Service Workers ?",
-      "choices": [
+      "propositions": [
         "Utilisation de l'application en mode hors-ligne",
         "Notifications Push",
         "Synchronisation en arrière-plan",
@@ -94,14 +94,14 @@
 
     {
       "question": "Laquelle de ces API ne peut pas être utilisée pour stocker des fichiers ou des données ?",
-      "choices": ["Cache API", "localStorage", "IndexedDB", "Fetch API"],
+      "propositions": ["Cache API", "localStorage", "IndexedDB", "Fetch API"],
       "answer": 4,
       "explaination": "La Cache API peut être utilisée pour stocker des réponses réseau et des fichiers. Le localStorage est un simple stockage côté client de paires clé-valeur de données, tandis que IndexedDB est une API servant à manipuler une base de données relationnelle côté client. Fetch est l'API utilisée pour faire des requêtes HTTP en JavaScript."
     },
 
     {
       "question": "Quel est le nom de la stratégie de cache qui, similairement à l'Optimistic UI, peut retourner deux réponses pour une seule requête ?",
-      "choices": [
+      "propositions": [
         "Cache First",
         "Cache Update Refresh",
         "Precaching",
@@ -113,14 +113,14 @@
 
     {
       "question": "Quel est le nom de l'outil le plus populaire pour auditer les PWA ?",
-      "choices": ["Lighthouse", "Preact", "Webpack", "Workbox"],
+      "propositions": ["Lighthouse", "Preact", "Webpack", "Workbox"],
       "answer": 1,
       "explaination": "Lighthouse est l'outil d'audit/débogage inclus dans les outils développeur de Chrome. Preact est un framework JavaScript, Webpack est un bundler et Workbox est une bibliothèque de fonctions utilitaires utilisées dans le développement de Service Workers."
     },
 
     {
       "question": "Comment les frameworks JS peuvent vous aider à concevoir des PWA ?",
-      "choices": [
+      "propositions": [
         "Ils utilisent leur process de build pour trouver et mettre en cache client tous les fichiers statiques requis par votre application",
         "Ils choisissent automatiquement la stratégie de cache la plus appropriée en fonction de la requête",
         "Ils aident à compléter le manifeste d'application pour vous, et le relier à votre application",

@@ -4,7 +4,7 @@
   "questions": [
     {
       "question": "What are PWA ?",
-      "choices": [
+      "propositions": [
         "A new marketing buzzword",
         "A new standard web API",
         "A new platform for web apps",
@@ -16,7 +16,7 @@
 
     {
       "question": "What are the advantages of PWA ?",
-      "choices": [
+      "propositions": [
         "Performance improvements",
         "Better platform integration",
         "Battery savings",
@@ -28,7 +28,7 @@
 
     {
       "question": "The \"P\" of PWA refers to Progressive Enhancement. What is the main objective of this methodology ?",
-      "choices": [
+      "propositions": [
         "Preserve older browsers support",
         "Take advantage of the specific capabilities of each device (screen size, touch screen, geolocalization...)",
         "Help the developer to gradually migrate a website to a PWA",
@@ -40,14 +40,14 @@
 
     {
       "question": "If a service follows the Optimistic UI approach (a.k.a. latency compensation), how many responses will return this service for one request ?",
-      "choices": ["One", "Two", "Three"],
+      "propositions": ["One", "Two", "Three"],
       "answer": 2,
       "explaination": "An optimistic service call will assume the request will succeed in most cases, therefore immediately returns a successful response, possibly with incomplete data. Then, when the network response is received, it sends back this second response to the view for data completion or error handling."
     },
 
     {
       "question": "How do you link a web manifest to a web app ?",
-      "choices": [
+      "propositions": [
         "using a <link> tag",
         "using a <meta> tag",
         "using the name convention \"manifest.json\""
@@ -58,7 +58,7 @@
 
     {
       "question": "Which of these propositions is not a valid value for the \"display\" property in a web app manifest ?",
-      "choices": [
+      "propositions": [
         "fullscreen",
         "standalone",
         "minimal-ui",
@@ -70,7 +70,7 @@
 
     {
       "question": "What is the specificity of Web Workers ?",
-      "choices": [
+      "propositions": [
         "they run in a separate thread",
         "they can use more CPU power",
         "they have a read-only access to the document",
@@ -82,7 +82,7 @@
 
     {
       "question": "What are the features offered by Service Workers ?",
-      "choices": [
+      "propositions": [
         "Advanced offline usage",
         "Push notifications",
         "Background synchronization",
@@ -94,14 +94,14 @@
 
     {
       "question": "Which one of these API can not be used to store files or data ?",
-      "choices": ["Cache API", "localStorage", "IndexedDB", "Fetch API"],
+      "propositions": ["Cache API", "localStorage", "IndexedDB", "Fetch API"],
       "answer": 4,
       "explaination": "Cache API can be used to store network responses and files, localStorage is a simple key-value data store, and IndexedDB is a client-side relational database. Fetch is the API used to make asynchronous requests in JavaScript."
     },
 
     {
       "question": "What is the name of the cache strategy that, similarly to Optimistic UI, can return two responses for one request ?",
-      "choices": [
+      "propositions": [
         "Cache First",
         "Cache Update Refresh",
         "Precaching",
@@ -113,14 +113,14 @@
 
     {
       "question": "What is the name of the most popular tool for auditing PWA ?",
-      "choices": ["Lighthouse", "Preact", "Webpack", "Workbox"],
+      "propositions": ["Lighthouse", "Preact", "Webpack", "Workbox"],
       "answer": 1,
       "explaination": "Lighthouse is an audit/debugging tool bundled into Chrome Dev Tools. Preact is a JS framework, Webpack is a bundler tool and Workbox is a set of libraries used in Service Workers development."
     },
 
     {
       "question": "How JS frameworks can help you build PWA ?",
-      "choices": [
+      "propositions": [
         "They use their build step to find and precache all required static files for your app",
         "They automatically pick the appropriate cache strategy depending on the request",
         "They help you complete the web app manifest and link it to your app",
