@@ -79,7 +79,7 @@ export default {
 			return Array.isArray(this.question.answer)
 		},
 		hasChosen() {
-			return this.canHaveMultipleAnswers
+			return this.chosen && this.canHaveMultipleAnswers
 				? this.chosen.length > 0
 				: this.chosen != null
 		},
